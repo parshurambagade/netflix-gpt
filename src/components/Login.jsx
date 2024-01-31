@@ -1,14 +1,23 @@
 import { useRef, useState } from "react"
 import { validateData } from "../utils/validateData";
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { auth } from "../utils/firebase";
+import { useDispatch } from "react-redux";
+import { addUser } from "../redux/userSlice";
+import { useNavigate } from "react-router-dom";
+import Header from "../layouts/Header";
+import { NETFLIX_BG, PROFILE_PIC } from "../utils/constants";
 
 const Login = () => {
     const [isSignInForm, setIsSignInForm] = useState(true);
     const [errorMessage, setErrorMessage] = useState(null);
 
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+
     const email = useRef(null);
     const password = useRef(null);
+    const displayName = useRef(null);
 
     const handleFormSubmit = (e) => {
       e.preventDefault();
@@ -23,8 +32,16 @@ const Login = () => {
         createUserWithEmailAndPassword(auth, email.current.value, password.current.value)
             .then((userCredential) => {
               // Signed up 
-              const user = userCredential.user;
-              console.log(user);
+              updateProfile(auth.currentUser, {
+                displayName: displayName.current.value, photoURL: PROFILE_PIC
+              }).then(() => {
+                const {uid, email, displayName, photoURL} = auth.currentUser;
+                dispatch(addUser({uid, email, displayName, photoURL}));
+              })
+              .catch((error) => console.log(error));
+
+              
+              
               // ...
             })
             .catch((error) => {
@@ -38,9 +55,10 @@ const Login = () => {
         signInWithEmailAndPassword(auth, email.current.value, password.current.value)
             .then((userCredential) => {
               // Signed in 
-              const user = userCredential.user;
-              console.log(user);
-              // ...
+              // const {uid,displayName, email, photoURL} = auth.currentUser;
+              //   dispatch(addUser({uid, email, displayName, photoURL}));
+              //   navigate('/browse')
+                // ...
             })
           .catch((error) => {
             const errorCode = error.code;
@@ -54,15 +72,13 @@ const Login = () => {
     }
 
   return (
-    <div className={`bg-black lg:bg-[url('https://assets.nflxext.com/ffe/siteui/vlv3/9134db96-10d6-4a64-a619-a21da22f8999/a449fabb-05e4-4c8a-b062-b0bec7d03085/IN-en-20240115-trifectadaily-perspective_alpha_website_large.jpg')] px-6 md:px-8  py-4 md:py-8 min-h-[100vh]`}>
+    <div className={`bg-black lg:bg-cover lg:bg-center px-6 md:px-8 py-4 md:py-8 min-h-[100vh]`} style={{backgroundImage: `url(${NETFLIX_BG})`}}>
 
-        <div className="logo lg:mx-48  ">
-            <img src="https://cdn.cookielaw.org/logos/dd6b162f-1a32-456a-9cfe-897231c7763c/4345ea78-053c-46d2-b11e-09adaef973dc/Netflix_Logo_PMS.png" alt="netflix logo" className="w-32 lg:w-44 lg:bg-gradient-to-b from-black" />
-        </div>
+        <Header />
 
         <form className="text-white w-full md:w-1/2 lg:w-3/12 lg:p-12 lg:rounded-lg lg:bg-black lg:opacity-85 md:mx-auto flex flex-col gap-4 my-4 md:my-12 lg:box-border text-sm">
             <h2 className="font-bold text-3xl lg:my-4">{isSignInForm ? "Sign In" : "Sign Up"}</h2>
-            {!isSignInForm && <input type="text" name="name" placeholder="Full name" className="w-full bg-gray-800 p-4 border border-gray-500 rounded-md"/>}
+            {!isSignInForm && <input type="text" ref={displayName} name="name" placeholder="Full name" className="w-full bg-gray-800 p-4 border border-gray-500 rounded-md"/>}
             <input ref={email} type="email" name="email" placeholder="Email address" className="w-full bg-gray-800 p-4 border border-gray-500 rounded-md"/>
             <input ref={password} type="password" name="password" placeholder="Enter password" className="w-full bg-gray-800 p-4 border border-gray-500 rounded-md"/>
            
