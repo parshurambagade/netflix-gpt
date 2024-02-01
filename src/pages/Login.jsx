@@ -6,7 +6,7 @@ import { useDispatch } from "react-redux";
 import { addUser } from "../redux/userSlice";
 import { useNavigate } from "react-router-dom";
 import Header from "../layouts/Header";
-import { NETFLIX_BG, PROFILE_PIC } from "../utils/constants";
+import { NETFLIX_BG, NETFLIX_LOGO, PROFILE_PIC } from "../utils/constants";
 
 const Login = () => {
     const [isSignInForm, setIsSignInForm] = useState(true);
@@ -55,9 +55,9 @@ const Login = () => {
         signInWithEmailAndPassword(auth, email.current.value, password.current.value)
             .then((userCredential) => {
               // Signed in 
-              // const {uid,displayName, email, photoURL} = auth.currentUser;
-              //   dispatch(addUser({uid, email, displayName, photoURL}));
-              //   navigate('/browse')
+              const {uid,displayName, email, photoURL} = auth.currentUser;
+                dispatch(addUser({uid, email, displayName, photoURL}));
+                navigate('/browse')
                 // ...
             })
           .catch((error) => {
@@ -73,8 +73,8 @@ const Login = () => {
 
   return (
     <div className={`bg-black  lg:bg-cover lg:bg-center lg:bg-[url('https://assets.nflxext.com/ffe/siteui/vlv3/9134db96-10d6-4a64-a619-a21da22f8999/a449fabb-05e4-4c8a-b062-b0bec7d03085/IN-en-20240115-trifectadaily-perspective_alpha_website_large.jpg')] px-6 my-0 md:px-8 py-2 min-h-[100vh]`}>
-        <div className="">
-        <Header />
+        <div className="px-28">
+        <img src={NETFLIX_LOGO} alt="netflix logo" className="w-32 lg:w-44 lg:h-12 bg-gradient-to-b from-black"  />
         </div>
 
         <form className="text-white w-full md:w-1/2 lg:w-3/12 lg:p-12 lg:rounded-lg lg:bg-black lg:opacity-85 md:mx-auto flex flex-col gap-4 my-4 md:my-32 lg:box-border text-sm">
