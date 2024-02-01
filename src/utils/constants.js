@@ -2,4 +2,16 @@ export const NETFLIX_BG = 'https://assets.nflxext.com/ffe/siteui/vlv3/9134db96-1
 
 export const NETFLIX_LOGO = "https://cdn.cookielaw.org/logos/dd6b162f-1a32-456a-9cfe-897231c7763c/4345ea78-053c-46d2-b11e-09adaef973dc/Netflix_Logo_PMS.png";
 
-export const PROFILE_PIC = "https://th.bing.com/th/id/R.9d32bec8058bd3595a63a08a8cc12ade?rik=9cCTin36GLU%2f5w&riu=http%3a%2f%2fcdn.onlinewebfonts.com%2fsvg%2fimg_87237.png&ehk=hVpH%2bC7rwlA1j2KqxGpMs1sp9l0RgM0jjRJsJsvDoPc%3d&risl=&pid=ImgRaw&r=0";
+export const PROFILE_PIC = "https://i.pinimg.com/originals/e3/94/30/e39430434d2b8207188f880ac66c6411.png";
+
+export const API_OPTIONS  = {
+    method: 'GET',
+    headers: {
+      accept: 'application/json',
+      Authorization: import.meta.env.VITE_TMDB_API_AUTHORIZATION_KEY
+    }
+  };
+
+export const TMDB_NOW_PLAYING_MOVIES = "https://api.themoviedb.org/3/movie/now_playing?page=1"
+
+export const MOVIE_VIDEOS = `https://api.themoviedb.org/3/movie/`

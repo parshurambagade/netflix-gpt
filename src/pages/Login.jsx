@@ -72,11 +72,12 @@ const Login = () => {
     }
 
   return (
-    <div className={`bg-black lg:bg-cover lg:bg-center px-6 md:px-8 py-4 md:py-8 min-h-[100vh]`} style={{backgroundImage: `url(${NETFLIX_BG})`}}>
-
+    <div className={`bg-black  lg:bg-cover lg:bg-center lg:bg-[url('https://assets.nflxext.com/ffe/siteui/vlv3/9134db96-10d6-4a64-a619-a21da22f8999/a449fabb-05e4-4c8a-b062-b0bec7d03085/IN-en-20240115-trifectadaily-perspective_alpha_website_large.jpg')] px-6 my-0 md:px-8 py-2 min-h-[100vh]`}>
+        <div className="">
         <Header />
+        </div>
 
-        <form className="text-white w-full md:w-1/2 lg:w-3/12 lg:p-12 lg:rounded-lg lg:bg-black lg:opacity-85 md:mx-auto flex flex-col gap-4 my-4 md:my-12 lg:box-border text-sm">
+        <form className="text-white w-full md:w-1/2 lg:w-3/12 lg:p-12 lg:rounded-lg lg:bg-black lg:opacity-85 md:mx-auto flex flex-col gap-4 my-4 md:my-32 lg:box-border text-sm">
             <h2 className="font-bold text-3xl lg:my-4">{isSignInForm ? "Sign In" : "Sign Up"}</h2>
             {!isSignInForm && <input type="text" ref={displayName} name="name" placeholder="Full name" className="w-full bg-gray-800 p-4 border border-gray-500 rounded-md"/>}
             <input ref={email} type="email" name="email" placeholder="Email address" className="w-full bg-gray-800 p-4 border border-gray-500 rounded-md"/>
