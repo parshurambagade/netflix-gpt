@@ -73,8 +73,8 @@ const Login = () => {
 
   return (
     <div className={`bg-black  lg:bg-cover lg:bg-center lg:bg-[url('https://assets.nflxext.com/ffe/siteui/vlv3/9134db96-10d6-4a64-a619-a21da22f8999/a449fabb-05e4-4c8a-b062-b0bec7d03085/IN-en-20240115-trifectadaily-perspective_alpha_website_large.jpg')] px-6 my-0 md:px-8 py-2 min-h-[100vh]`}>
-        <div className="px-28">
-        <img src={NETFLIX_LOGO} alt="netflix logo" className="w-32 lg:w-44 lg:h-12 bg-gradient-to-b from-black"  />
+        <div className="lg:ml-[-2rem] lg:mt-[-1rem]">
+          <Header />
         </div>
 
         <form className="text-white w-full md:w-1/2 lg:w-3/12 lg:p-12 lg:rounded-lg lg:bg-black lg:opacity-85 md:mx-auto flex flex-col gap-4 my-4 md:my-32 lg:box-border text-sm">
