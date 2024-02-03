@@ -1,14 +1,48 @@
 import React, { useRef } from 'react'
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { languageText } from '../utils/languages';
+import OpenAI from "openai";
+import {  addMovieNames, addMovies } from '../redux/gptSlice';
+import { API_OPTIONS, TMDB_GET_MOVIES_BY_KEYWORD } from '../utils/constants';
 
 const GptSearbar = () => {
     const searchQuery = useRef(null);
     const lang = useSelector(state => state.config.lang);
+    const dispatch = useDispatch();
+
     
+  
+  const getTmdbMovies = async (movieName) => {
+    const data = await fetch(TMDB_GET_MOVIES_BY_KEYWORD + movieName, API_OPTIONS);
+    const json = await data.json();
+    return json.results.filter(movie => movie.poster_path);
+  }
     const handleSearchClicked = () => {
-        console.log(searchQuery.current.value)
+        getGptResults();
     }
+
+    const openai = new OpenAI({
+      apiKey: import.meta.env.VITE_GPT_API_KEY, // This is the default and can be omitted
+      dangerouslyAllowBrowser: true
+    });
+
+    const prompt = "Act as a movie recommandation system, Give only the names of 5 movies that are related to the provided topic, dont give numbering, only give names comma separated. (result shlould look like: 'bhool bhooliya, aparichit, jadoo, raaz, bhoot') topic is: "
+
+    const getGptResults = async () => {
+      const completion = await openai.chat.completions.create({
+        messages: [{ role: "user", content: prompt + searchQuery.current.value }],
+          model: "gpt-3.5-turbo",
+      });
+  
+        const movieNames = completion.choices[0]?.message?.content?.split(',');
+        dispatch(addMovieNames(movieNames));
+        const promiseArray = movieNames.map(movie => getTmdbMovies(movie));
+        const results = await Promise.all(promiseArray);
+        dispatch(addMovies(results));
+        
+    }
+
+
   return (
     <div className='bg-black text-white p-4 w-1/2' >
         <form onSubmit={(e) => e.preventDefault()} className='flex gap-3 w-full'>
