@@ -1,13 +1,67 @@
-# Features to add:
--GPT Search Button\
--GPT Search page
-    -SearchBar
-    -Movies Suggestions
-    -Change Language
+# NetflixGPT
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+NetflixGPT is a web application built using React.js, Redux Toolkit, and Tailwind CSS. It utilizes GPT's API to provide movie recommendations based on user queries. The app features a search bar powered by GPT, allowing users to search for anything and receive movie recommendations tailored to their query.
 
-Currently, two official plugins are available:
+## Deployment
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+The application has been deployed on Vercel. You can access it [here](https://netflix-gpt-liart.vercel.app/).
+
+## Features
+
+- **GPT-Powered Search:** Utilizes GPT's API to provide movie recommendations based on user queries.
+- **Memorization:** Implements memorization to avoid unnecessary API calls, improving performance.
+- **Responsive Design:** Built with responsiveness in mind, ensuring optimal user experience across all devices.
+- **Pages:**
+  - **Login Page:** Allows users to log in to their accounts.
+  - **Browse Page:** Displays categorized movie cards, including popular, upcoming, top-rated, and currently playing movies.
+  - **GPT Search Page:** Features the GPT-powered search bar for users to discover movie recommendations.
+
+## Technologies Used
+
+- **Frontend:**
+  - React.js
+  - Redux Toolkit
+  - Tailwind CSS
+  - React Router DOM
+- **Backend:**
+  - Firebase for user authentication
+  - TMDB API for fetching movie details
+
+## Additional Features
+
+- **Form Validation:** Implements form validation to enhance user experience and ensure data integrity.
+- **User Authentication:** Utilizes Firebase for user authentication, ensuring secure access to the application.
+- **Dynamic UI Elements:** Incorporates dynamic elements such as video backgrounds and categorized movie cards for an engaging user experience.
+- **Language Support:** Offers support for English, Hindi, and Marathi languages with integrated language-switching feature.
+
+## Screenshots and Videos
+
+### Login Page
+![Login Page](screenshots/login.png)
+
+### Browse Page
+![Browse Page](screenshots/browse.png)
+
+### GPT Search Page
+![GPT Search Page](screenshots/gpt-search.png)
+
+### Screen Casting Video
+[![Screen Casting Video](screenshots/video-thumbnail.png)](https://www.youtube.com/watch?v=your-video-id)
+
+## Installation
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/parshurambagade/netflix-gpt.git
+
+2. Install dependencies::
+    ```bash
+    cd NetflixGPT
+    npm install
+
+3. Run the development server:
+    ```bash
+    npm start
+
+4. Access the application in your browser at http://localhost:3000.
