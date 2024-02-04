@@ -3,14 +3,12 @@ import { useDispatch, useSelector } from 'react-redux';
 import { languageText } from '../utils/languages';
 import OpenAI from "openai";
 import {  addMovieNames, addMovies } from '../redux/gptSlice';
-import { API_OPTIONS, TMDB_GET_MOVIES_BY_KEYWORD } from '../utils/constants';
+import { API_OPTIONS, GPT_PROMPT, TMDB_GET_MOVIES_BY_KEYWORD } from '../utils/constants';
 
 const GptSearchbar = () => {
     const searchQuery = useRef(null);
     const lang = useSelector(state => state.config.lang);
     const dispatch = useDispatch();
-
-    
   
   const getTmdbMovies = async (movieName) => {
     const data = await fetch(TMDB_GET_MOVIES_BY_KEYWORD + movieName, API_OPTIONS);
@@ -26,11 +24,11 @@ const GptSearchbar = () => {
       dangerouslyAllowBrowser: true
     });
 
-    const prompt = "Act as a movie recommandation system, Give only the names of 5 movies that are related to the provided topic, dont give numbering, only give names comma separated. (result shlould look like: 'bhool bhooliya, aparichit, jadoo, raaz, bhoot') topic is: "
+    
 
     const getGptResults = async () => {
       const completion = await openai.chat.completions.create({
-        messages: [{ role: "user", content: prompt + searchQuery.current.value }],
+        messages: [{ role: "user", content: GPT_PROMPT + searchQuery.current.value }],
           model: "gpt-3.5-turbo",
       });
   

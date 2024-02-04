@@ -1,4 +1,3 @@
-import React, { useEffect } from 'react'
 import { useSelector } from 'react-redux'
 import MovieText from './MovieText';
 import VideoBackground from './VideoBackground';

@@ -1,5 +1,4 @@
-import React, { useEffect } from 'react'
-import { API_OPTIONS, NETFLIX_BG, TMDB_GET_MOVIES_BY_KEYWORD } from '../utils/constants'
+import {NETFLIX_BG } from '../utils/constants'
 import { useSelector } from 'react-redux'
 import MoviesCards from '../components/MoviesCards'
 import GptSearchbar from '../components/GptSearchbar'

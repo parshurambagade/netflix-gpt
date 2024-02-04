@@ -57,7 +57,7 @@ const Header = () => {
     //   name: e.target.i}));
   };
   return (
-    <div className="z-20 lg:absolute bg-black logo w-full px-2 py-4 lg:px-20 h-max flex justify-between lg:bg-gradient-to-b from-black text-white ">
+    <div className="z-20 lg:absolute  logo w-full px-2 py-4 lg:px-20 h-max flex justify-between bg-black md:bg-gradient-to-b from-black text-white ">
       <img
         src={NETFLIX_LOGO}
         alt="netflix logo"
@@ -66,7 +66,7 @@ const Header = () => {
 
       {user && (
         // RIGHT SIDE CONTAIER
-        <div className="flex gap-4 px-2 lg:pr-0 items-center ">
+        <div className="flex gap-3 pr-3 lg:pr-0 items-center ">
 
           {/* SWITCH LANGUAGE  */}
           <select

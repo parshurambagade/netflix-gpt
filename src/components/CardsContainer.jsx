@@ -1,8 +1,5 @@
-import React from 'react'
 import { useSelector } from 'react-redux';
-import { IMG_CDN_URL } from '../utils/constants';
 import MoviesCards from './MoviesCards';
-import { addTopRatedMovies, addUpcomingMovies } from '../redux/moviesSlice';
 import { languageText } from '../utils/languages';
 
 const CardsContainer = () => {
@@ -15,8 +12,8 @@ const CardsContainer = () => {
     const topRatedMovies = movies.topRatedMovies;
     const upcomingMovies = movies.upcomingMovies;
   return (
-    <div className='bg-black px-2 pt-8 pb-16 lg:p-8'>
-        <div className='flex flex-col gap-2 lg:gap-4 -mt-16  lg:-mt-72  relative z-10'>
+    <div className='bg-black px-2 pt-8 pb-16 md:px-6 lg:p-8'>
+        <div className='flex flex-col gap-2 lg:gap-4 -mt-16  lg:-mt-24 xl:-mt-60 relative z-10'>
         
         <MoviesCards name={languageText?.browsePage[lang]?.nowPlaying} movies={nowPlayingMovies} />
         <MoviesCards name={languageText?.browsePage[lang]?.popular} movies={popularMovies} />
