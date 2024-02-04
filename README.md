@@ -46,9 +46,9 @@ The application has been deployed on Vercel. You can access it [here](https://ne
 ![GPT Search Page](./src/assets/screenshots/gptSearch.webm)
 
 ### Screen Casting Video
-[![Desktop view](./src/assets/screenshots/desktop-view.webm)](https://www.youtube.com/watch?v=your-video-id)
-[![Tablet view](./src/assets/screenshots/tablet-view.webm)](https://www.youtube.com/watch?v=your-video-id)
-[![Mobile view](./src/assets/screenshots/mobile-view.webm)](https://www.youtube.com/watch?v=your-video-id)
+[![Desktop view](./src/assets/screenshots/browse.png)](https://www.youtube.com/watch?v=your-video-id)
+[![Tablet view](./src/assets/screenshots/tablet.png)](https://www.youtube.com/watch?v=your-video-id)
+[![Mobile view](./src/assets/screenshots/mobile.png)](https://www.youtube.com/watch?v=your-video-id)
 
 ## Installation
 
