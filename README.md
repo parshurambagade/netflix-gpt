@@ -37,16 +37,18 @@ The application has been deployed on Vercel. You can access it [here](https://ne
 ## Screenshots and Videos
 
 ### Login Page
-![Login Page](screenshots/login.png)
-
+![Sign-in Page](./src/assets/screenshots/sign-in.png)
+![Sign-up Page](./src/assets/screenshots/sign-up.png)
 ### Browse Page
-![Browse Page](screenshots/browse.png)
+![Browse Page](./src/assets/screenshots/browse.webm)
 
 ### GPT Search Page
-![GPT Search Page](screenshots/gpt-search.png)
+![GPT Search Page](./src/assets/screenshots/gptSearch.webm)
 
 ### Screen Casting Video
-[![Screen Casting Video](screenshots/video-thumbnail.png)](https://www.youtube.com/watch?v=your-video-id)
+[![Desktop view](./src/assets/screenshots/desktop-view.webm)](https://www.youtube.com/watch?v=your-video-id)
+[![Tablet view](./src/assets/screenshots/tablet-view.webm)](https://www.youtube.com/watch?v=your-video-id)
+[![Mobile view](./src/assets/screenshots/mobile-view.webm)](https://www.youtube.com/watch?v=your-video-id)
 
 ## Installation
 
