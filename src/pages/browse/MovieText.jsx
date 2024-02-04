@@ -1,7 +1,7 @@
 import { FaPlay } from "react-icons/fa";
 import { ImInfo } from "react-icons/im";
 import { useSelector } from 'react-redux';
-import { languageText } from '../utils/languages';
+import { languageText } from '../../utils/languages';
 
 const MovieText = ({title, overview}) => {
   const lang = useSelector(state => state.config.lang);

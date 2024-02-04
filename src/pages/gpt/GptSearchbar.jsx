@@ -1,9 +1,9 @@
 import React, { useRef } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { languageText } from '../utils/languages';
+import { languageText } from '../../utils/languages';
 import OpenAI from "openai";
-import {  addMovieNames, addMovies } from '../redux/gptSlice';
-import { API_OPTIONS, GPT_PROMPT, TMDB_GET_MOVIES_BY_KEYWORD } from '../utils/constants';
+import {  addMovieNames, addMovies } from '../../redux/gptSlice';
+import { API_OPTIONS, GPT_PROMPT, TMDB_GET_MOVIES_BY_KEYWORD } from '../../utils/constants';
 
 const GptSearchbar = () => {
     const searchQuery = useRef(null);

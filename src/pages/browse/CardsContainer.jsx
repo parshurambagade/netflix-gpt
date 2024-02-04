@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
-import MoviesCards from './MoviesCards';
-import { languageText } from '../utils/languages';
+import MoviesCards from '../../components/MoviesCards';
+import { languageText } from '../../utils/languages';
 
 const CardsContainer = () => {
     const movies = useSelector(state => state.movies);
