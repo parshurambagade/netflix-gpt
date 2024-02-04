@@ -40,10 +40,10 @@ The application has been deployed on Vercel. You can access it [here](https://ne
 ![Sign-in Page](./src/assets/screenshots/sign-in.png)
 ![Sign-up Page](./src/assets/screenshots/sign-up.png)
 ### Browse Page
-![Browse Page](./src/assets/screenshots/browse.webm)
+![Browse Page](./src/assets/screenshots/browse.png)
 
 ### GPT Search Page
-![GPT Search Page](./src/assets/screenshots/gptSearch.webm)
+![GPT Search Page](./src/assets/screenshots/gptSearch.png)
 
 ### Screen Casting Video
 [![Desktop view](./src/assets/screenshots/browse.png)](https://www.youtube.com/watch?v=your-video-id)
