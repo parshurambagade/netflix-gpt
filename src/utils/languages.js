@@ -33,17 +33,17 @@ export const languageText = {
     headerText: {
         en: {
             signOut: "Sign out",
-            gptSearch: "GPT Search",
+            gptSearch: "GPT",
             home: "Home"
         },
         hi: {
             signOut: "साइन आउट",
-            gptSearch: "GPT सर्च",
+            gptSearch: "GPT",
             home: "होम"
         },
         ma: {
             signOut: "साइन आउट",
-            gptSearch: "GPT सर्च",
+            gptSearch: "GPT",
             home: "होम"
         },
     },

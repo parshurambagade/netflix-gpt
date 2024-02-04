@@ -72,16 +72,20 @@ const Login = () => {
     }
 
   return (
-    <div className={`  px-1  my-0 md:px-8 py-2 min-h-[100vh]`}>
-        <div className="fixed mx-[-2rem] my-[-.5rem] -z-20">
+    <div className={`my-[-2rem]  min-h-[100vh]`}>
+        <div className="fixed -z-20">
           <img src={NETFLIX_BG} alt="netflix-bg" className="h-screen object-cover lg:h-full " />
         </div>
-        <div className="lg:ml-[-2rem] lg:mt-[-1rem]">
+
+        <div className="fixed -z-10 lg:hidden">
+          <div className="bg-black h-screen w-screen bg-opacity-70"></div>
+        </div>
+        <div className="my-8">
           <Header />
         </div>
-
-        <form className="text-white w-full bg-black my-28 rounded-lg  lg:my-40 md:w-1/2 lg:w-3/12 py-8 px-6 lg:p-12  bg-opacity-85 md:mx-auto flex flex-col gap-4 md:my-32 lg:box-border text-sm">
-            <h2 className="font-bold text-3xl lg:my-4">{isSignInForm ? "Sign In" : "Sign Up"}</h2>
+        <div className="lg:flex lg:flex-col lg:items-center  pt-12 lg:pt-28 ">
+        <form className="absolute mt-20 text-white w-full bg-transparent lg:bg-black  rounded-lg  md:w-1/2 lg:w-3/12 p-6 md:p-8 lg:p-12  lg:bg-opacity-85 mx-auto flex flex-col gap-4 lg:box-border text-sm">
+            <h2 className="font-bold text-2xl lg:text-3xl lg:my-4">{isSignInForm ? "Sign In" : "Sign Up"}</h2>
             {!isSignInForm && <input type="text" ref={displayName} name="name" placeholder="Full name" className="w-full bg-gray-800 p-4 border border-gray-500 rounded-md"/>}
             <input ref={email} type="email" name="email" placeholder="Email address" className="w-full bg-gray-800 p-4 border border-gray-500 rounded-md"/>
             <input ref={password} type="password" name="password" placeholder="Enter password" className="w-full bg-gray-800 p-4 border border-gray-500 rounded-md"/>
@@ -99,6 +103,7 @@ const Login = () => {
         <p className="text-white">Already registered? <span className="font-bold cursor-pointer" onClick={() => setIsSignInForm(!isSignInForm)}>Sign in now.</span></p>}
         </div> 
         </form>
+        </div>
 
         
     </div>

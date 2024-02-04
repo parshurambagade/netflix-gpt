@@ -15,8 +15,8 @@ const CardsContainer = () => {
     const topRatedMovies = movies.topRatedMovies;
     const upcomingMovies = movies.upcomingMovies;
   return (
-    <div className='bg-black p-8'>
-        <div className='flex flex-col gap-4 -mt-72 relative z-10'>
+    <div className='bg-black px-2 pt-8 pb-16 lg:p-8'>
+        <div className='flex flex-col gap-2 lg:gap-4 -mt-16  lg:-mt-72  relative z-10'>
         
         <MoviesCards name={languageText?.browsePage[lang]?.nowPlaying} movies={nowPlayingMovies} />
         <MoviesCards name={languageText?.browsePage[lang]?.popular} movies={popularMovies} />
