@@ -83,8 +83,8 @@ const Login = () => {
         <div className="mt-8">
           <Header />
         </div>
-        <div className="lg:flex lg:flex-col lg:items-center  pt-6 md:pt-16 lg:pt-28 ">
-        <form className="flex mt-4 lg:mt-20 text-white w-full bg-transparent lg:bg-black  rounded-lg  md:w-1/2 lg:w-3/12 p-6 md:p-8 lg:p-12  lg:bg-opacity-85 mx-auto  md:flex flex-col gap-4 lg:box-border md:text-left  text-sm">
+        <div className="lg:flex lg:flex-col lg:items-center  pt-4 md:pt-16 lg:pt-0 ">
+        <form className="flex md:mt-4 lg:mt-20 text-white w-full bg-transparent lg:bg-black  rounded-lg  md:w-1/2 lg:w-3/12 p-6 md:p-2 lg:p-12  lg:bg-opacity-85 mx-auto  md:flex flex-col gap-4 lg:box-border md:text-left  text-sm">
             <h2 className="font-bold text-2xl lg:text-3xl lg:my-4">{isSignInForm ? "Sign In" : "Sign Up"}</h2>
             {!isSignInForm && <input type="text" ref={displayName} name="name" placeholder="Full name" className="w-full bg-gray-800 p-4 border border-gray-500 rounded-md"/>}
             <input ref={email} type="email" name="email" placeholder="Email address" className="w-full bg-gray-800 p-4 border border-gray-500 rounded-md"/>
@@ -93,9 +93,9 @@ const Login = () => {
             {errorMessage && <p className="text-red-700 my-2 ">{errorMessage}</p>}
 
             <button type="submit" className="bg-red-700 font-bold p-4  w-full rounded-md" onClick={handleFormSubmit}>{!isSignInForm ? "Sign Up" : "Sign In"}</button>
-            <p className="md:text-base md:text-center lg:text-sm">Forgot password ?</p>
+            <p className="md:text-base  lg:text-sm">Forgot password ?</p>
 
-            <div className="md:mx-auto  md:my-16 lg:my-8 lg:mx-0">
+            <div className="my-4 sm:my-8  md:my-16 lg:my-8 lg:mx-0">
         {isSignInForm 
         ? 
         <p className="text-white md:text-left">New to Netflix? <span className="font-bold cursor-pointer" onClick={() => setIsSignInForm(!isSignInForm)}>Sign up now.</span></p>
