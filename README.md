@@ -37,8 +37,12 @@ The application has been deployed on Vercel. You can access it [here](https://fl
 ## Screenshots and Videos
 
 ### Screen Casting Video
+
+#### Desktop View
 ![Desktop view](./src/assets/screenshots/desktop-view.gif)
+#### Tablet View
 ![tablet view](./src/assets/screenshots/tablet-view.gif)
+#### Mobile View
 ![mobile view](./src/assets/screenshots/mobile-view.gif)
 
 ### Login Page
