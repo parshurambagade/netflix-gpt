@@ -1,11 +1,11 @@
 # NetflixGPT
 
-FlixGPT is a web application built using React.js, Redux Toolkit, and Tailwind CSS. It utilizes GPT's API to provide movie recommendations based on user queries. The app features a search bar powered by GPT, allowing users to search for anything and receive movie recommendations tailored to their query.
+NetflixGPT is a web application built using React.js, Redux Toolkit, and Tailwind CSS. It utilizes GPT's APIs to provide movie recommendations based on user queries. The app features a search bar powered by GPT, allowing users to search for anything and receive movie recommendations tailored to their query.
 
 ![Desktop view](./src/assets/screenshots/desktop-view.gif)
 
-## Deployment
-
+## Deployments
+s
 The application has been deployed on Vercel. You can access it [here](https://flix-gpt.vercel.app/).
 
 ## Features
