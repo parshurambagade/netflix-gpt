@@ -9,7 +9,7 @@ The application has been deployed on Vercel. You can access it [here](https://fl
 ## Features
 
 - **GPT-Powered Search:** Utilizes GPT's API to provide movie recommendations based on user queries.
-- **Memorization:** Implements memorization to avoid unnecessary API calls, improving performance.
+- **Memoization:** Implements memoization to avoid unnecessary API calls, improving performance.
 - **Responsive Design:** Built with responsiveness in mind, ensuring optimal user experience across all devices.
 - **Pages:**
   - **Login Page:** Allows users to log in to their accounts.
@@ -36,19 +36,20 @@ The application has been deployed on Vercel. You can access it [here](https://fl
 
 ## Screenshots and Videos
 
+### Screen Casting Video
+![Desktop view](./src/assets/screenshots/desktop-view.gif)
+![tablet view](./src/assets/screenshots/tablet-view.gif)
+![mobile view](./src/assets/screenshots/mobile-view.gif)
+
 ### Login Page
 ![Sign-in Page](./src/assets/screenshots/sign-in.png)
 ![Sign-up Page](./src/assets/screenshots/sign-up.png)
+
 ### Browse Page
 ![Browse Page](./src/assets/screenshots/browse.png)
 
 ### GPT Search Page
 ![GPT Search Page](./src/assets/screenshots/gptSearch.png)
-
-### Screen Casting Video
-![Desktop view](./src/assets/screenshots/desktop-view.gif)
-![tablet view](./src/assets/screenshots/tablet-view.gif)
-![mobile view](./src/assets/screenshots/mobile-view.gif)
 
 ## Installation
 
