@@ -34,17 +34,20 @@ export const languageText = {
         en: {
             signOut: "Sign out",
             gptSearch: "GPT",
-            home: "Home"
+            home: "Home",
+            signIn: "Sign In"
         },
         hi: {
             signOut: "साइन आउट",
             gptSearch: "GPT",
-            home: "होम"
+            home: "होम",
+            signIn: "साइन इन"
         },
         ma: {
             signOut: "साइन आउट",
             gptSearch: "GPT",
-            home: "होम"
+            home: "होम",
+            signIn: "साइन इन"
         },
     },
     browsePage: {
@@ -73,5 +76,40 @@ export const languageText = {
             moreInfo: "अधिक माहिती"
         }
         
+    },
+    loginPage: {
+        en: {
+            signIn: "Sign In",
+            signUp: "Sign Up",
+            emailAddress: "Email address",
+            enterPassword: "Enter password",
+            forgotPassword: "Forgot password?",
+            newToNetflix: "New to Netflix?",
+            home: "Home",
+            fullName: "Full name",
+            alreadyRegistered: "Already registered?",
+        },
+        hi: {
+            signIn: "साइन इन",
+            signUp: "साइन अप",
+            emailAddress: "ईमेल ॲड्रेस",
+            enterPassword: "पासवर्ड डालें",
+            forgotPassword: "पासवर्ड भूल गए?",
+            newToNetflix: "Netflix पर नए हैं?",
+            home: "होम",
+            fullName: "पूरा नाम",
+            alreadyRegistered: "पहले से पंजीकृत?",
+        },
+        ma: {
+            signIn: "साइन इन",
+            signUp: "साइन अप",
+            emailAddress: "ईमेल ॲड्रेस",
+            enterPassword: "पासवर्ड टाका",
+            forgotPassword: "पासवर्ड विसरलात?",
+            newToNetflix: "Netflix वर नवीन आहात?",
+            home: "होम",
+            fullName: "पूर्ण नाव",
+            alreadyRegistered: "आधीच नोंदणीकृत?",
+        }
     }     
 }
