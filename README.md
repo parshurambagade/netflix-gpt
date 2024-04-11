@@ -5,7 +5,6 @@ NetflixGPT is a web application built using React.js, Redux Toolkit, and Tailwin
 ![Desktop view](./src/assets/screenshots/desktop-view.gif)
 
 ## Deployments
-s
 The application has been deployed on Vercel. You can access it [here](https://flix-gpt.vercel.app/).
 
 ## Features
