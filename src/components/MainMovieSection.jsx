@@ -1,14 +1,11 @@
 import { useSelector } from 'react-redux'
-import MovieText from './MovieText';
+import MovieText from '../pages/browse/MovieText';
 import VideoBackground from './VideoBackground';
+import { useParams } from 'react-router-dom';
 
-const MainMovieSection = () => {
-  const nowPlayingMovies = useSelector(store => store.movies.nowPlayingMovies);
-  
-  if(!nowPlayingMovies.length) return;
-
-  const mainMovie = nowPlayingMovies[0];
-  // console.log(mainMovie)
+const MainMovieSection = ({mainMovie}) => {
+  if(!mainMovie) return null;
+  // console.log(mainMovie);
   const {original_title, overview, id} = mainMovie;
     // const trailer = useSelector(store => store.movies?.trailer);
 

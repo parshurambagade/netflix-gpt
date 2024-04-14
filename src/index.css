@@ -8,12 +8,12 @@
 ::-webkit-scrollbar {
   width: 5px; /* Width of the scrollbar */
   background-color: transparent;
-  height: 10px;
+  height: 12px;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: rgb(43, 41, 41);
+  background: rgb(16, 16, 16);
   border: 1px solid rgba(93, 78, 78, 0.641);
   border-radius: 10px; /* Color of the scrollbar handle */
 }
