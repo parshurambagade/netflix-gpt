@@ -14,7 +14,7 @@ const useTrailer = (movieId) => {
     const fetchMovieVideos = async () => {
         const data = await fetch(MOVIE_VIDEOS + movieId + "/videos", API_OPTIONS);
         const json = await data.json();
-
+        console.log(json);
         //checks for the type = Trailer 
         const filteredData = json.results.filter((video) => video.type==="Trailer");
         const trailer = filteredData.length ? filteredData[0] : json.results[0];
