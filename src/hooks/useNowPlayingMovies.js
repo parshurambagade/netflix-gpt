@@ -1,23 +1,31 @@
 import { useEffect } from "react";
-import { API_OPTIONS, TMDB_NOW_PLAYING_MOVIES } from "../utils/constants";
+import { TMDB_NOW_PLAYING_MOVIES } from "../utils/constants";
 import { useDispatch, useSelector } from "react-redux";
-import {  addNowPlayingMovies } from "../redux/moviesSlice";
+import { addNowPlayingMovies } from "../redux/moviesSlice";
 
 const useNowPlayingMovies = () => {
-    const dispatch = useDispatch();
-    const nowPlayingMovies = useSelector(state => state.movies.nowPlayingMovies);
+  const dispatch = useDispatch();
+  const nowPlayingMovies = useSelector(
+    (state) => state.movies.nowPlayingMovies
+  );
 
-    useEffect(() => {
-        !nowPlayingMovies.length && fetchMovies();
-    }, [])
+  useEffect(() => {
+    !nowPlayingMovies.length && fetchMovies();
+  }, []);
 
-    
+  const fetchMovies = async () => {
+    try {
+      // const data = await fetch(TMDB_NOW_PLAYING_MOVIES, API_OPTIONS);
+      const data = await fetch(TMDB_NOW_PLAYING_MOVIES);
+      const json = await data.json();
 
-    const fetchMovies = async () => {
-        const data = await fetch(TMDB_NOW_PLAYING_MOVIES, API_OPTIONS);
-        const json = await data.json();
-        dispatch(addNowPlayingMovies(json.results));
+      console.log("now playing: ", await JSON.parse(json.contents)?.results);
+
+      dispatch(addNowPlayingMovies(await JSON.parse(json.contents)?.results));
+    } catch (e) {
+      console.error(e);
     }
-}
+  };
+};
 
 export default useNowPlayingMovies;

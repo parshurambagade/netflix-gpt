@@ -4,20 +4,24 @@ import { useDispatch, useSelector } from "react-redux";
 import { addPopularMovies } from "../redux/moviesSlice";
 
 const usePopularMovies = () => {
-    const dispatch = useDispatch();
-    const popularMovies = useSelector(state => state.movies.popularMovies);
+  const dispatch = useDispatch();
+  const popularMovies = useSelector((state) => state.movies.popularMovies);
 
-    useEffect(() => {
-        !popularMovies.length && fetchMovies();
-    }, [])
+  useEffect(() => {
+    !popularMovies.length && fetchMovies();
+  }, []);
 
-    
+  const fetchMovies = async () => {
+    try {
+      const data = await fetch(TMDB_POPULAR_MOVIES);
+      const json = await data.json();
 
-    const fetchMovies = async () => {
-        const data = await fetch(TMDB_POPULAR_MOVIES, API_OPTIONS);
-        const json = await data.json();
-        dispatch(addPopularMovies(json.results));
+      console.log("popular movies: ",await JSON.parse(json?.contents)?.results);
+      dispatch(addPopularMovies(await JSON.parse(json?.contents)?.results));
+    } catch (e) {
+      console.error(e);
     }
-}
+  };
+};
 
 export default usePopularMovies;

@@ -6,23 +6,23 @@
 
 /* This is a custom scrollbar style */
 ::-webkit-scrollbar {
-  width: 5px; /* Width of the scrollbar */
+  width: 5px; 
   background-color: transparent;
-  height: 12px;
+  height: 10px;
 }
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
   background: rgb(16, 16, 16);
-  border: 1px solid rgba(93, 78, 78, 0.641);
-  border-radius: 10px; /* Color of the scrollbar handle */
+  border: 1px solid rgba(73, 53, 53, 0.641);
+  border-radius: 10px; 
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: rgba(57, 44, 44, 0.8); /* Color of the scrollbar handle on hover */
+  background: rgba(20, 16, 16, 0.8);
 }
 
 ::-webkit-scrollbar-track {
-    background: transparent; /* Set the background of the scrollbar track to transparent */
+    background: transparent; 
   }

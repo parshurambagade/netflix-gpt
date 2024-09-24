@@ -54,7 +54,7 @@ const Header = () => {
       .then(() => {
         dispatch(removeUser())
       })
-      .catch((error) => console.log(error));
+      .catch((error) => console.error(error));
   };
 
   const handleSignInClick = () => {

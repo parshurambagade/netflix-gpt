@@ -9,12 +9,17 @@ import useTopRatedMovies from "../../hooks/useTopRatedMovies";
 import useUpcomingMovies from "../../hooks/useUpcomingMovies";
 import GptSearchPage from "../gpt/GptSearchPage";
 import useMainMovie from "../../hooks/useMainMovie";
+import useMxPlayerMovies from "../../hooks/useMxPlayerMovies";
+import { useEffect } from "react";
 
 const Browse = () => {
-  useNowPlayingMovies();
+  useMxPlayerMovies();
+  useNowPlayingMovies();  
   usePopularMovies();
   useTopRatedMovies();
   useUpcomingMovies();
+
+
   const mainMovie = useMainMovie();
 
 

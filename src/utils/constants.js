@@ -12,20 +12,37 @@ export const API_OPTIONS  = {
     }
   };
 
-export const TMDB_NOW_PLAYING_MOVIES = "https://api.themoviedb.org/3/movie/now_playing?page=1"
+export const CORS_ORIGIN_PROXY = "https://api.allorigins.win/get?url="
+export const TMDB_API_KEY = import.meta.env.VITE_TMDB_API_KEY;
 
-export const MOVIE_VIDEOS = `https://api.themoviedb.org/3/movie/`
+export const TMDB_NOW_PLAYING_MOVIES = `${CORS_ORIGIN_PROXY}${encodeURIComponent(`https://api.themoviedb.org/3/movie/now_playing?page=1&api_key=${TMDB_API_KEY}`)}`;
 
-export const IMG_CDN_URL = "https://image.tmdb.org/t/p/w200/"
 
-export const TMDB_POPULAR_MOVIES = "https://api.themoviedb.org/3/movie/popular?language=en-US&page=1"
+export const MOVIE_VIDEOS = `https://api.themoviedb.org/3/movie/?api_key=${TMDB_API_KEY}`;
 
-export const TMDB_TOP_RATED_MOVIES = "https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1"
+export const IMG_CDN_URL = `https://image.tmdb.org/t/p/w200/`;
 
-export const TMDB_UPCOMING_MOVIES = "https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1"
+export const TMDB_POPULAR_MOVIES = `${CORS_ORIGIN_PROXY}${encodeURIComponent(`https://api.themoviedb.org/3/movie/popular?language=en-US&page=1&api_key=${TMDB_API_KEY}`)}`;
 
-export const TMDB_GET_MOVIES_BY_KEYWORD = `https://api.themoviedb.org/3/search/movie?include_adult=false&language=en-US&page=1&query=`;
+export const TMDB_TOP_RATED_MOVIES = `${CORS_ORIGIN_PROXY}${encodeURIComponent(`https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1&api_key=${TMDB_API_KEY}`)}`;
 
-export const TMDB_GET_MOVIE_DETAILS = `https://api.themoviedb.org/3/movie/`;
+export const TMDB_UPCOMING_MOVIES = `${CORS_ORIGIN_PROXY}${encodeURIComponent(`https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1&api_key=${TMDB_API_KEY}`)}`
+
+export const TMDB_GET_MOVIES_BY_KEYWORD = `https://api.themoviedb.org/3/search/movie?api_key=${TMDB_API_KEY}&include_adult=false&language=en-US&page=1&query=`;
+
+export const TMDB_GET_MOVIE_DETAILS = `https://api.themoviedb.org/3/movie/?api_key=${TMDB_API_KEY}`;
 
 export const GPT_PROMPT = "Act as a movie recommandation system, Give only the names of 5 movies that are related to the provided topic, dont give numbering, only give names comma separated. (result shlould look like: 'bhool bhooliya, aparichit, jadoo, raaz, bhoot') topic is: "
+
+
+export const MX_PLAYER_IMAGE_BASE_URL='https://qqcdnpictest.mxplay.com/'
+
+
+export const MX_PLAYER_DATA_API1='https://api.mxplayer.in/v1/web/home/tab/87c3ddc974dcf12294e9412bec44b097?platform=com.mxplay.desktop&content-languages=hi,en'
+
+export const MX_PLAYER_DATA_API2='https://api.mxplayer.in/v1/web/home/tab/87c3ddc974dcf12294e9412bec44b097?next=b0550db420ea3492531f28b73a1c0b66&platform=com.mxplay.desktop&content-languages=hi,en'
+
+export const MX_PLAYER_DATA_API3='https://api.mxplayer.in/v1/web/home/tab/87c3ddc974dcf12294e9412bec44b097?next=4e1ab56ad7923ec732e480a8486a1b33&platform=com.mxplay.desktop&content-languages=hi,en'
+
+export const MX_PLAYER_DATA_API4='https://api.mxplayer.in/v1/web/home/tab/87c3ddc974dcf12294e9412bec44b097?next=65f9c44bac619a24d1d7787fd07b84d4&platform=com.mxplay.desktop&content-languages=hi,en'
+

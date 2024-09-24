@@ -40,7 +40,7 @@ const Login = () => {
                 const {uid, email, displayName, photoURL} = auth.currentUser;
                 dispatch(addUser({uid, email, displayName, photoURL}));
               })
-              .catch((error) => console.log(error));
+              .catch((error) => console.error(error));
 
               
               
