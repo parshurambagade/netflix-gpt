@@ -7,7 +7,7 @@ const useMainMovie = () => {
     (store) => store.movies.nowPlayingMovies
   );
 
-  if (!nowPlayingMovies.length) {
+  if (!nowPlayingMovies?.length) {
     return;
   }
 

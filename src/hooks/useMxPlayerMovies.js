@@ -9,7 +9,7 @@ const useMxPlayerMovies = () => {
     const mxPlayerMovies = useSelector(state => state.movies.mxPlayerMovies);
 
     useEffect(() => {
-        !mxPlayerMovies.length && fetchMovies();
+        !mxPlayerMovies?.length && fetchMovies();
     }, []);
 
     const fetchMovies = async () => {

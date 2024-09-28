@@ -18,7 +18,7 @@ const usePopularMovies = () => {
   }, [dispatch]);
 
   useEffect(() => {
-    !popularMovies.length && fetchMovies();
+    !popularMovies?.length && fetchMovies();
   }, [popularMovies, fetchMovies]);
 };
 

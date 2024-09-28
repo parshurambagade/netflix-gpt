@@ -18,7 +18,7 @@ const useTopRatedMovies = () => {
   }, [dispatch]);
 
   useEffect(() => {
-    !topRatedMovies.length && fetchMovies();
+    !topRatedMovies?.length && fetchMovies();
   }, [topRatedMovies, fetchMovies]);
 };
 

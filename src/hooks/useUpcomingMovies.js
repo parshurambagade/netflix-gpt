@@ -18,7 +18,7 @@ const useUpcomingMovies = () => {
   }, [dispatch]);
 
   useEffect(() => {
-    !upcomingMovies.length && fetchMovies();
+    !upcomingMovies?.length && fetchMovies();
   }, [fetchMovies, upcomingMovies]);
 };
 

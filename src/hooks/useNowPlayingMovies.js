@@ -20,7 +20,7 @@ const useNowPlayingMovies = () => {
   }, [dispatch]);
 
   useEffect(() => {
-    !nowPlayingMovies.length && fetchMovies();
+    !nowPlayingMovies?.length && fetchMovies();
   }, [nowPlayingMovies, fetchMovies]);
 };
 
