@@ -1,22 +1,27 @@
-
+/* eslint-disable react/prop-types */
 import { Link } from "react-router-dom";
-import { CORS_ORIGIN_PROXY, IMG_CDN_URL, MX_PLAYER_IMAGE_BASE_URL } from "../utils/constants";
+import { IMG_CDN_URL } from "../utils/constants";
 
+// eslint-disable-next-line react/prop-types
 const MoviesCards = ({movies, name}) => {
-  if(!movies) return;
+  if(!movies) return null;
+
   return (
-    <div className=" my-2  lg:mx-12 text-white  overflow-x-scroll max-w-full" >  
-      <h1 className="font-bold text-lg lg:text-2xl mt-4 mb-3 lg:my-4">{name}</h1>
-      <div className="flex gap-4 lg:gap-6 w-max">
-        {movies?.map((movie) => (
-          <Link key={movie.id} to={'/movie/' + movie.id} className="w-max cursor-pointer    hover:border hover:border-white transition-all ease-linear">
-            {/* <img src={`${CORS_ORIGIN_PROXY}${encodeURIComponent(`${IMG_CDN_URL}${movie.poster_path}`) }`} alt="movie poster" className="w-32 sm:w-40 md:w-48 lg:w-56"  /> */}
-            <img src={`${IMG_CDN_URL}${movie.poster_path}`} alt="movie poster" className="w-32 sm:w-40 md:w-48 lg:w-56"  />
-          
-            {/* <img src={MX_PLAYER_IMAGE_BASE_URL + movie.imageInfo.filter(img => img.type=='portrait_large')[0].url} alt="movie poster" className="w-32 lg:hover:w-60 transition-all ease-linear sm:w-40 md:w-48 lg:w-56"  /> */}
-          </Link>
-        ))} 
-      </div>    
+    <div className="text-white">  
+      <h2 className="font-bold text-xl md:text-2xl lg:text-3xl mb-4">{name}</h2>
+      <div className="overflow-x-auto pb-4">
+        <div className="flex gap-4 w-max">
+          {movies?.map((movie) => (
+            <Link key={movie.id} to={'/movie/' + movie.id} className="flex-shrink-0 transition-transform duration-300 ease-in-out transform hover:scale-105">
+              <img 
+                src={`${IMG_CDN_URL}${movie.poster_path}`} 
+                alt={movie.title} 
+                className="w-32 sm:w-40 md:w-48 lg:w-56 rounded-lg shadow-lg"
+              />
+            </Link>
+          ))} 
+        </div>    
+      </div>
     </div>      
   );
 };

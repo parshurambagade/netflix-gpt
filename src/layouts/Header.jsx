@@ -79,7 +79,7 @@ const Header = () => {
     //   name: e.target.i}));
   };
   return (
-    <div className="z-50 relative  logo w-full px-2 py-2 md:py-4  lg:px-20 h-max flex justify-between  bg-gradient-to-b from-black text-white ">
+    <div className="z-50 relative  logo w-full px-2 py-2 md:py-4  lg:px-20 h-max flex justify-between  bg-gradient-to-b from-black text-white bg-black lg:bg-transparent ">
       <img
         src={NETFLIX_LOGO}
         alt="netflix logo"

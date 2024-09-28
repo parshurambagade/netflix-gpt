@@ -18,7 +18,7 @@ export const TMDB_API_KEY = import.meta.env.VITE_TMDB_API_KEY;
 export const TMDB_NOW_PLAYING_MOVIES = `${CORS_ORIGIN_PROXY}${encodeURIComponent(`https://api.themoviedb.org/3/movie/now_playing?page=1&api_key=${TMDB_API_KEY}`)}`;
 
 
-export const MOVIE_VIDEOS = `https://api.themoviedb.org/3/movie/?api_key=${TMDB_API_KEY}`;
+export const MOVIE_VIDEOS = `https://api.themoviedb.org/3/movie/`;
 
 export const IMG_CDN_URL = `https://image.tmdb.org/t/p/w200/`;
 
