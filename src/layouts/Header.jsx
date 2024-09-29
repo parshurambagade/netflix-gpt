@@ -34,20 +34,20 @@ const Header = () => {
     transition: Bounce,
     });
 
-  useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
-      if (user) {
-        // User is signed in, see docs for a list of available properties
-        // https://firebase.google.com/docs/reference/js/auth.user
-        const { uid, email, displayName, photoURL } = user;
-        dispatch(addUser({ uid, email, displayName, photoURL }));
-        navigate("/");
-        // ...
-      }
-    });
-
-    return () => unsubscribe();
-  }, []);
+    useEffect(() => {
+      const unsubscribe = onAuthStateChanged(auth, (user) => {
+        if (user) {
+          const { uid, email, displayName, photoURL } = user;
+          dispatch(addUser({ uid, email, displayName, photoURL }));
+          // Redirect only if user is on login or unauthorized pages
+          if (location.pathname === "/login") {
+            navigate("/");
+          }
+        }
+      });
+      return () => unsubscribe();
+    }, [dispatch, navigate, location]);
+    
 
   const handleSignOutClick = () => {
     signOut(auth)
@@ -79,7 +79,7 @@ const Header = () => {
     //   name: e.target.i}));
   };
   return (
-    <div className="z-50 relative  logo w-full px-2 py-2 md:py-4  lg:px-20 h-max flex justify-between  bg-gradient-to-b from-black text-white bg-black lg:bg-transparent ">
+    <div className="z-40 relative  logo w-full px-2 py-2 md:py-4  lg:px-20 h-max flex justify-between  bg-gradient-to-b from-black text-white bg-black  ">
       <img
         src={NETFLIX_LOGO}
         alt="netflix logo"

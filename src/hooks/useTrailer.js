@@ -35,8 +35,8 @@ const useTrailer = (movieId) => {
   }, [movieId, dispatch]);
 
   useEffect(() => {
-    !trailer && movieId && fetchMovieVideos();
-  }, [movieId, trailer, fetchMovieVideos]);
+    movieId && fetchMovieVideos();
+  }, [movieId, fetchMovieVideos]);
 
   return trailer;
 };
