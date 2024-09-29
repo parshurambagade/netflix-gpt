@@ -23,7 +23,7 @@ const GptSearchbar = () => {
       );
       const json = await data.json();
       return JSON.parse(json.contents)?.results?.filter(
-        (movie) => movie.poster_path
+        (movie) => movie?.poster_path
       );
     } catch (err) {
       console.error(err);
@@ -35,15 +35,15 @@ const GptSearchbar = () => {
 
   const getGptResults = async () => {
     const genAI = new GoogleGenerativeAI(import.meta.env.VITE_GEMINI_API_KEY);
-    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
-    const result = await model.generateContent(
-      GPT_PROMPT + searchQuery.current.value
+    const model = genAI?.getGenerativeModel({ model: "gemini-1.5-flash" });
+    const result = await model?.generateContent(
+      GPT_PROMPT + searchQuery?.current.value
     );
     const movieNames =
-      result.response.candidates[0].content.parts[0].text.split(",");
+      result?.response?.candidates[0]?.content?.parts[0]?.text?.split(",");
     dispatch(addMovieNames(movieNames));
     const promiseArray = movieNames.map((movie) => getTmdbMovies(movie));
-    const results = await Promise.all(promiseArray);
+    const results = await Promise?.all(promiseArray);
     dispatch(addMovies(results));
   };
 

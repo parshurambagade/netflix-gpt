@@ -13,7 +13,7 @@ const CardsContainer = () => {
 
   return (
     <div className='  bg-black px-2 pt-16 pb-16 md:px-6 lg:p-8'>
-        <div className='flex flex-col gap-2 lg:gap-4 -mt-16  lg:-mt-24 xl:-mt-60 relative'>
+        <div className='flex flex-col gap-2 lg:gap-4 -mt-16  xl:-mt-60 relative '>
         <MoviesCards name={languageText?.browsePage[lang]?.nowPlaying} movies={nowPlayingMovies} />
         <MoviesCards name={languageText?.browsePage[lang]?.popular} movies={popularMovies} />
         <MoviesCards name={languageText?.browsePage[lang]?.topRated} movies={topRatedMovies} />

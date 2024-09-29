@@ -2,6 +2,7 @@ import { NETFLIX_BG } from "../../utils/constants";
 import { useSelector } from "react-redux";
 import MoviesCards from "../../components/MoviesCards";
 import GptSearchbar from "./GptSearchbar";
+import Header from "../../layouts/Header";
 
 const GptSearchPage = () => {
   const movieNames = useSelector((state) => state.gpt.movieNames);
@@ -9,6 +10,7 @@ const GptSearchPage = () => {
 
   return (
     <div className="min-h-screen ">
+      <Header />
       <img
         src={NETFLIX_BG}
         alt="netflix background"
@@ -20,7 +22,7 @@ const GptSearchPage = () => {
         </div>
         {movieNames?.length && (
           <div className="bg-black bg-opacity-70 py-4 lg:py-8 px-4 mx-2 -my-16 sm:-my-8 lg:mx-20">
-            {movieNames.map((movie, i) => (
+            {movieNames?.map((movie, i) => (
               <MoviesCards key={movie} name={movie} movies={movies[i]} />
             ))}
           </div>

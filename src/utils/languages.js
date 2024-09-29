@@ -32,19 +32,19 @@ export const languageText = {
     },
     headerText: {
         en: {
-            signOut: "Sign out",
+            logout: "Logout",
             gptSearch: "GPT",
             home: "Home",
             signIn: "Sign In"
         },
         hi: {
-            signOut: "साइन आउट",
+            logout: "लॉग आउट",
             gptSearch: "GPT",
             home: "होम",
             signIn: "साइन इन"
         },
         ma: {
-            signOut: "साइन आउट",
+            logout: "लॉग आउट",
             gptSearch: "GPT",
             home: "होम",
             signIn: "साइन इन"
