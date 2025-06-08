@@ -56,13 +56,15 @@ const Header = () => {
 
        
         {/* Mobile Menu Button */}
-        <button onClick={toggleMenu} className="md:hidden text-2xl">
+        <button onClick={toggleMenu} className="md:hidden text-2xl" aria-label='Toggle menu'>
           {isMenuOpen ? <FiX /> : <FiMenu />}
         </button>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex items-center space-x-4">
+          <label htmlFor='language' className='sr-only'>Choose Language</label>
         <select
+        id="language"
         className="bg-gray-700 px-2 py-2 rounded text-sm border border-gray-600 focus:outline-none focus:ring-2 focus:ring-red-500"
         onChange={handleLanguageChange}
         value={lang}
@@ -96,7 +98,7 @@ const NavItems = ({ user, lang, handleSignOut, handleLanguageChange, isMobile })
   return (
     <div className='flex flex-col md:flex-row items-start md:gap-4'>
 
-      <Link to="/" className={`${buttonClass} md:bg-green-600 md:hover:bg-green-700`}>
+      <Link to="/" className={`${buttonClass} md:bg-green-700 md:hover:bg-green-800`}>
         <FiHome className="mr-2 text-base" />
         <p>{languageText.headerText[lang].home}</p>
       </Link>

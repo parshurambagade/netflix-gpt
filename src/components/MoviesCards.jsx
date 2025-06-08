@@ -7,10 +7,10 @@ const MoviesCards = ({movies, name}) => {
   if(!movies) return null;
 
   return (
-    <div className="text-white">  
+    <section aria-label={name} className="text-white">  
       <h2 className="font-bold text-xl md:text-2xl lg:text-3xl mb-4">{name}</h2>
-      <div className="overflow-x-auto pb-4">
-        <div className="flex gap-4 w-max">
+      <div className="w-full pb-4">
+        <div className="overflow-x-auto flex gap-4 pb-2" tabIndex={0}>
           {movies?.map((movie) => (
             <Link key={movie.id} to={'/movie/' + movie.id} className="flex-shrink-0 transition-transform duration-300 ease-in-out transform hover:scale-105">
               <img 
@@ -22,7 +22,7 @@ const MoviesCards = ({movies, name}) => {
           ))} 
         </div>    
       </div>
-    </div>      
+    </section>      
   );
 };
 
