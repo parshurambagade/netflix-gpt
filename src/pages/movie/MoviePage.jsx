@@ -24,7 +24,7 @@ const MoviePage = () => {
   return (
     <div className="bg-black text-white min-h-screen">
       <Header />
-      <div className='bg-black' >
+      <main className='bg-black' >
       <div className="bg-black  relative">
         <div className="absolute -top-8 md:-top-16 lg:-top-24 inset-0 bg-gradient-to-t from-black to-transparent z-10"></div>
         {/* <img
@@ -34,22 +34,22 @@ const MoviePage = () => {
         /> */}
         <VideoBackground movieId={movieId} />
 
-        <div className="absolute bottom-0 left-0 p-6 z-20">
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">{movie?.title}</h1>
-          <p className="text-lg md:text-xl mb-4">{movie?.tagline}</p>
-        </div>
+        <section aria-label="Movie title" className=" absolute bottom-0 left-0 2xl:left-44 p-6 z-20">
+          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold">{movie?.title}</h1>
+          <p className="text-lg md:text-xl">{movie?.tagline}</p>
+        </section>
       </div>
 
       <div className=" container mx-auto px-4 py-8">
         <div className="flex flex-col md:flex-row gap-8">
-          <div className="md:w-1/3">
+          <section aria-label='Movie poster' className="md:w-1/3">
             <img
               src={`${IMG_CDN_URL + movie?.poster_path}`}
               alt={movie?.title}
               className="w-full rounded-lg shadow-lg"
             />
-          </div>
-          <div className="md:w-2/3">
+          </section>
+          <section aria-label='Movie overview' className="md:w-2/3">
             <h2 className="text-2xl font-semibold mb-4">Overview</h2>
             <p className="text-lg mb-6">{movie?.overview}</p>
             <div className="grid grid-cols-2 gap-4 mb-6">
@@ -70,9 +70,9 @@ const MoviePage = () => {
                 <p>{movie?.genres?.map(genre => genre?.name).join(', ')}</p>
               </div>
             </div>
-            <div>
+            <section aria-label='Movie trailer'>
               <h2 className="text-2xl font-semibold mb-4">Trailer</h2>
-              <div className="aspect-w-16 aspect-h-9">
+              <div className="aspect-video">
                 <iframe
                   src={`https://www.youtube.com/embed/${trailer?.key}`}
                   title="Movie Trailer"
@@ -80,12 +80,12 @@ const MoviePage = () => {
                   className="w-full h-full"
                 ></iframe>
               </div>
-            </div>
-          </div>
+            </section>
+          </section>
         </div>
         {movieCredits?.cast && 
-        <div className="mt-12">
-          <h2 className="text-2xl font-semibold mb-4">Cast</h2>
+        <section aria-labelledby='cast-heading' className="mt-12">
+          <h2 className="text-2xl font-semibold mb-4" id='cast-heading'>Cast</h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4">
             {movieCredits?.cast?.slice(0,12)?.map(actor => (
               <div key={actor?.id} className="text-center">
@@ -99,10 +99,10 @@ const MoviePage = () => {
               </div>
             ))}
           </div>
-        </div>
+        </section>
 }
       </div>
-      </div>
+      </main>
     </div>
   );
 };
