@@ -14,7 +14,6 @@ const useMovieDetails = (movieId) => {
         )}`
       );
       const json = await data.json();
-      console.log(JSON.parse(json.contents));
       dispatch(addMovieDetails(JSON.parse(json.contents)));
     } catch (e) {
       console.error(e);

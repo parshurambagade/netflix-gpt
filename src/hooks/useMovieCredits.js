@@ -17,8 +17,6 @@ const useMovieCredits = (movieId) => {
       );
       const json = await response.json();
 
-      console.log("Response in fetchMovieCredits: ", JSON.parse(json.contents));
-
       dispatch(addMovieCredits(JSON.parse(json.contents)));
     } catch (err) {
       console.error(err);

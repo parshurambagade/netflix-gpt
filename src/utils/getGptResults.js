@@ -5,10 +5,13 @@ import {
     TMDB_GET_MOVIES_BY_KEYWORD,
   } from "./constants";
 
-  import {addMovieNames, addMovies} from "../redux/gptSlice";
+  import {addMovieNames, addMovies, setError, setLoading} from "../redux/gptSlice";
 
 const getGptResults = async (searchQuery, dispatch) => {
-    const genAI = new GoogleGenerativeAI(import.meta.env.VITE_GEMINI_API_KEY);
+    try{
+      dispatch(setLoading(true));
+      dispatch(setError(false));
+      const genAI = new GoogleGenerativeAI(import.meta.env.VITE_GEMINI_API_KEY);
     const model = genAI?.getGenerativeModel({ model: "gemini-1.5-flash" });
     const result = await model?.generateContent(
       GPT_PROMPT + searchQuery?.current.value
@@ -19,6 +22,13 @@ const getGptResults = async (searchQuery, dispatch) => {
     const promiseArray = movieNames.map((movie) => getTmdbMovies(movie));
     const results = await Promise?.all(promiseArray);
     dispatch(addMovies(results));
+    }catch(err){
+      console.error(err);
+      dispatch(setLoading(false));
+      dispatch(setError(true));
+    }finally{
+      dispatch(setLoading(false));
+    }
   };
 
     const getTmdbMovies = async (movieName) => {
