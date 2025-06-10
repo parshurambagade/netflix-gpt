@@ -21,6 +21,7 @@ export const TMDB_NOW_PLAYING_MOVIES = `${CORS_ORIGIN_PROXY}${encodeURIComponent
 export const MOVIE_VIDEOS = `https://api.themoviedb.org/3/movie/`;
 
 export const TMDB_MOVIE_CREDITS = `https://api.themoviedb.org/3/movie/`
+export const TMDB_PERSON_MOVIE_CREDITS = `https://api.themoviedb.org/3/person/`
 
 export const IMG_CDN_URL = `https://image.tmdb.org/t/p/w200/`;
 
@@ -33,6 +34,7 @@ export const TMDB_UPCOMING_MOVIES = `${CORS_ORIGIN_PROXY}${encodeURIComponent(`h
 export const TMDB_GET_MOVIES_BY_KEYWORD = `https://api.themoviedb.org/3/search/movie?api_key=${TMDB_API_KEY}&include_adult=false&language=en-US&page=1&query=`;
 
 export const TMDB_GET_MOVIE_DETAILS = `https://api.themoviedb.org/3/movie/`;
+export const TMDB_GET_PERSON_DETAILS = `https://api.themoviedb.org/3/person/`;
 
 export const GPT_PROMPT = "Act as a movie recommandation system, Give only the names of 5 movies that are related to the provided topic, dont give numbering, only give names comma separated. (result shlould look like: 'bhool bhooliya, aparichit, jadoo, raaz, bhoot') topic is: "
 
