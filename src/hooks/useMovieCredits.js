@@ -7,12 +7,7 @@ const useMovieCredits = (movieId) => {
 
   const fetchMovieCredits = useCallback(async () => {
     try {
-      const response = await fetch("/api/movie-credits?movieId=" + movieId, {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-        },
-      });
+      const response = await fetch("/api/movie-credits?movieId=" + movieId);
 
       // const json = await response.json();
       // console.log(
