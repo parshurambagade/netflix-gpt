@@ -10,7 +10,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addUser } from "../redux/userSlice";
 import { useNavigate } from "react-router-dom";
 import Header from "../layouts/Header";
-import { NETFLIX_BG, NETFLIX_LOGO, PROFILE_PIC } from "../utils/constants";
+import { NETFLIX_BG, PROFILE_PIC } from "../utils/constants";
 import { languageText } from "../utils/languages.js";
 
 const Login = () => {
@@ -88,7 +88,7 @@ const Login = () => {
         <img
           src={NETFLIX_BG}
           alt="netflix-bg"
-          className="h-screen object-cover"
+          className="h-screen 2xl:w-screen object-cover"
         />
       </div>
 
@@ -98,8 +98,8 @@ const Login = () => {
       <div className="mt-8">
         <Header />
       </div>
-      <div className="lg:flex lg:flex-col lg:items-center  pt-4 md:pt-16 lg:pt-0 ">
-        <form className="flex md:mt-4 lg:mt-20 text-white w-full min-w-96 max-w-96 bg-transparent lg:bg-black  rounded-lg  md:w-1/2 lg:w-3/12 p-6 md:p-2 lg:p-12  lg:bg-opacity-85 mx-auto  md:flex flex-col gap-4 lg:box-border md:text-left  text-sm ">
+      <div className="lg:flex lg:flex-col lg:items-center  pt-4 md:pt-16 lg:pt-0">
+        <form className="flex md:mt-4 lg:mt-20 text-white w-full  max-w-96 md:max-w-md bg-transparent md:bg-black  rounded-lg  md:w-1/2 lg:w-4/12 p-6 md:p-12  md:bg-opacity-85 mx-auto  md:flex flex-col gap-4 lg:box-border md:text-left  text-sm ">
           <h2 className="font-bold text-2xl lg:text-3xl lg:my-4">
             {isSignInForm
               ? languageText?.loginPage[lang]?.signIn
@@ -147,7 +147,7 @@ const Login = () => {
           <div className="my-4 sm:my-8  md:my-16 lg:my-8 lg:mx-0">
             {isSignInForm ? (
               <p className="text-white md:text-left">
-                {languageText?.loginPage[lang]?.newToNetflix}{" "}
+                {languageText?.loginPage[lang]?.newToWhat2Watch}{" "}
                 <span
                   className="font-bold cursor-pointer"
                   onClick={() => setIsSignInForm(!isSignInForm)}

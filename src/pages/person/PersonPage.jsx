@@ -29,7 +29,10 @@ const PersonPage = () => {
               className="lg:w-1/3 gap-4 md:gap-6 flex flex-col items-center lg:items-start justify-center lg:justify-start text-center lg:text-start"
             >
               <img
-                src={`${IMG_CDN_URL + person?.profile_path}`}
+                src={IMG_CDN_URL + "w185" + person?.profile_path}
+                srcSet={`
+${IMG_CDN_URL}w154${person?.profile_path} 1x,
+${IMG_CDN_URL}w342${person?.profile_path} 2x`}
                 alt={person?.name}
                 className="w-full max-w-sm rounded-lg shadow-lg"
               />
@@ -81,9 +84,14 @@ const PersonPage = () => {
                         className="text-center"
                       >
                         <img
-                          src={IMG_CDN_URL + movie?.poster_path}
+                          src={IMG_CDN_URL + "185" + movie?.poster_path}
+                          srcSet={`
+                           ${IMG_CDN_URL}w154${movie?.poster_path} 1x,
+                              ${IMG_CDN_URL}w342${movie?.poster_path} 2x
+                          `}
                           alt={movie?.title}
                           className="w-full rounded-lg shadow-lg mb-2"
+                          loading="lazy"
                         />
                         <p className="font-semibold">{movie?.title}</p>
                       </Link>

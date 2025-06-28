@@ -41,9 +41,13 @@ const MoviePage = () => {
           <div className="flex flex-col md:flex-row gap-8">
             <section aria-label="Movie poster" className="md:w-1/3">
               <img
-                src={`${IMG_CDN_URL + movie?.poster_path}`}
+                src={IMG_CDN_URL + "w185" + movie?.poster_path}
+                srcSet={`
+${IMG_CDN_URL}w154${movie?.poster_path} 1x,
+${IMG_CDN_URL}w342${movie?.poster_path} 2x`}
                 alt={movie?.title}
                 className="w-full rounded-lg shadow-lg"
+                loading="lazy"
               />
             </section>
             <section aria-label="Movie overview" className="md:w-2/3">
@@ -96,9 +100,13 @@ const MoviePage = () => {
                       className="text-center"
                     >
                       <img
-                        src={IMG_CDN_URL + actor?.profile_path}
+                        src={IMG_CDN_URL + "w185" + actor?.profile_path}
+                        srcSet={`
+        ${IMG_CDN_URL}w154${actor?.profile_path} 1x,
+        ${IMG_CDN_URL}w342${actor?.profile_path} 2x`}
                         alt={actor?.name}
                         className="w-full rounded-lg shadow-lg mb-2"
+                        loading="lazy"
                       />
                       <p className="font-semibold">{actor?.name}</p>
                       <p className="text-sm text-gray-400">

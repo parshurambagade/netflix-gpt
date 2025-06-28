@@ -1,10 +1,11 @@
-# NetflixGPT
+# What2Watch AI
 
-NetflixGPT is a web application built using React.js, Redux Toolkit, and Tailwind CSS. It utilizes GPT's APIs to provide movie recommendations based on user queries. The app features a search bar powered by GPT, allowing users to search for anything and receive movie recommendations tailored to their query.
+What2Watch AI is a web application built using React.js, Redux Toolkit, and Tailwind CSS. It utilizes GPT's APIs to provide movie recommendations based on user queries. The app features a search bar powered by GPT, allowing users to search for anything and receive movie recommendations tailored to their query.
 
 ![Desktop view](./src/assets/screenshots/desktop-view.gif)
 
 ## Deployments
+
 The application has been deployed on Vercel. You can access it [here](https://flix-gpt.vercel.app/).
 
 ## Features
@@ -40,18 +41,24 @@ The application has been deployed on Vercel. You can access it [here](https://fl
 ### Screen Casting Video
 
 #### Tablet View
+
 ![tablet view](./src/assets/screenshots/tablet-view.gif)
+
 #### Mobile View
+
 ![mobile view](./src/assets/screenshots/mobile-view.gif)
 
 ### Login Page
+
 ![Sign-in Page](./src/assets/screenshots/sign-in.png)
 ![Sign-up Page](./src/assets/screenshots/sign-up.png)
 
 ### Browse Page
+
 ![Browse Page](./src/assets/screenshots/browse.png)
 
 ### GPT Search Page
+
 ![GPT Search Page](./src/assets/screenshots/gptSearch.png)
 
 ## Installation
@@ -59,15 +66,23 @@ The application has been deployed on Vercel. You can access it [here](https://fl
 1. Clone the repository:
 
    ```bash
-   git clone https://github.com/parshurambagade/netflix-gpt.git
+   git clone https://github.com/parshurambagade/what2watch-ai.git
+
+   ```
 
 2. Install dependencies::
-    ```bash
-    cd NetflixGPT
-    npm install
+
+   ```bash
+   cd What2Watch-AI
+   npm install
+
+   ```
 
 3. Run the development server:
-    ```bash
-    npm start
+
+   ```bash
+   npm start
+
+   ```
 
 4. Access the application in your browser at http://localhost:3000.

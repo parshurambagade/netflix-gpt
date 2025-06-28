@@ -23,7 +23,7 @@ export const MOVIE_VIDEOS = `https://api.themoviedb.org/3/movie/`;
 export const TMDB_MOVIE_CREDITS = `https://api.themoviedb.org/3/movie/`
 export const TMDB_PERSON_MOVIE_CREDITS = `https://api.themoviedb.org/3/person/`
 
-export const IMG_CDN_URL = `https://image.tmdb.org/t/p/w200/`;
+export const IMG_CDN_URL = `https://image.tmdb.org/t/p/`;
 
 export const TMDB_POPULAR_MOVIES = `${CORS_ORIGIN_PROXY}${encodeURIComponent(`https://api.themoviedb.org/3/movie/popular?language=en-US&page=1&api_key=${TMDB_API_KEY}`)}`;
 
