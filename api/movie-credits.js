@@ -9,12 +9,12 @@ export default async function handler(req, res) {
 
   try {
     const response = await fetch(
-      `${TMDB_MOVIE_CREDITS}${movieId}/credits?language=en-US&api_key=${process.env.VITE_TMDB_API_KEY}`,
+      `${TMDB_MOVIE_CREDITS}${movieId}/credits?language=en-US&api_key=${process.env.TMDB_API_KEY}`,
       {
         method: "GET",
         headers: {
           accept: "application/json",
-          Authorization: process.env.VITE_TMDB_API_AUTHORIZATION_KEY,
+          Authorization: process.env.TMDB_API_AUTHORIZATION_KEY,
         },
       }
     );
