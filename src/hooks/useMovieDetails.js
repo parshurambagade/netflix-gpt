@@ -10,7 +10,9 @@ const useMovieDetails = (movieId) => {
     try {
       const data = await fetch(
         `${CORS_ORIGIN_PROXY}${encodeURIComponent(
-          `${TMDB_GET_MOVIE_DETAILS + movieId}?api_key=${import.meta.env.VITE_TMDB_API_KEY}`
+          `${TMDB_GET_MOVIE_DETAILS + movieId}?api_key=${
+            import.meta.env.VITE_TMDB_API_KEY
+          }`
         )}`
       );
       const json = await data.json();
@@ -18,14 +20,11 @@ const useMovieDetails = (movieId) => {
     } catch (e) {
       console.error(e);
     }
-  },[dispatch, movieId]);
-
+  }, [dispatch, movieId]);
 
   useEffect(() => {
     movieId && fetchMovieDetails();
   }, [fetchMovieDetails, movieId]);
-
-
 };
 
 export default useMovieDetails;
