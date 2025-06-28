@@ -9,13 +9,7 @@ const useMovieCredits = (movieId) => {
     try {
       const response = await fetch("/api/movie-credits?movieId=" + movieId);
 
-      // const json = await response.json();
-      // console.log(
-      //   "Response from movie-credits API:",
-      //   JSON.parse(await response.text())
-      // );
-
-      dispatch(addMovieCredits(JSON.parse(response.contents)));
+      dispatch(addMovieCredits(response?.contents));
     } catch (err) {
       console.error(err);
     }
