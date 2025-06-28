@@ -16,8 +16,8 @@ export const PROFILE_PIC =
 // };
 
 export const CORS_ORIGIN_PROXY = "https://api.allorigins.win/get?url=";
-// export const TMDB_API_KEY = import.meta.env.TMDB_API_KEY;
-export const TMDB_API_KEY = "";
+export const TMDB_API_KEY = import.meta.env.TMDB_API_KEY;
+// export const TMDB_API_KEY = "";
 
 export const TMDB_NOW_PLAYING_MOVIES = `${CORS_ORIGIN_PROXY}${encodeURIComponent()`https://api.themoviedb.org/3/movie/now_playing?page=1&api_key=${TMDB_API_KEY}`}`;
 
