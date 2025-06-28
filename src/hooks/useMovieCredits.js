@@ -8,8 +8,12 @@ const useMovieCredits = (movieId) => {
   const fetchMovieCredits = useCallback(async () => {
     try {
       const response = await fetch("/api/movie-credits?movieId=" + movieId);
-
-      dispatch(addMovieCredits(response?.contents));
+      if (!response.ok) {
+        throw new Error("Failed to fetch movie credits");
+      }
+      const json = await response.json();
+      console.log("Movie Credits:", json);
+      dispatch(addMovieCredits(json));
     } catch (err) {
       console.error(err);
     }
