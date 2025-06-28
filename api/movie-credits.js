@@ -1,4 +1,4 @@
-import { API_OPTIONS, TMDB_MOVIE_CREDITS } from "../src/utils/constants.js";
+import { TMDB_MOVIE_CREDITS } from "../src/utils/constants.js";
 
 export default async function handler(req, res) {
   const { movieId } = req.query;
@@ -9,8 +9,14 @@ export default async function handler(req, res) {
 
   try {
     const response = await fetch(
-      `${TMDB_MOVIE_CREDITS}${movieId}/credits?language=en-US&api_key=${process.env.TMDB_API_KEY}`,
-      API_OPTIONS
+      `${TMDB_MOVIE_CREDITS}${movieId}/credits?language=en-US&api_key=${process.env.VITE_TMDB_API_KEY}`,
+      {
+        method: "GET",
+        headers: {
+          accept: "application/json",
+          Authorization: process.env.VITE_TMDB_API_AUTHORIZATION_KEY,
+        },
+      }
     );
 
     if (!response.ok) {
