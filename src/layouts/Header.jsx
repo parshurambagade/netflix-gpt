@@ -1,13 +1,11 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { addUser, removeUser } from "../redux/userSlice";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { auth } from "../utils/firebase";
 import { onAuthStateChanged, signOut } from "firebase/auth";
-import { NETFLIX_LOGO } from "../utils/constants";
 import { changeLanguage } from "../redux/configSlice";
 import languages, { languageText } from "../utils/languages";
-import WHAT2WATCH_LOGO from "../assets/what2watch-logo.png";
 import {
   FiLogOut,
   FiSearch,
@@ -60,7 +58,7 @@ const Header = () => {
       <div className="container mx-auto flex justify-between items-center">
         <Link to="/" className="flex items-center">
           <img
-            src={WHAT2WATCH_LOGO}
+            src={"./assets/what2watch-logo.png"}
             alt="What2Watch Logo"
             className="w-24 md:w-32"
           />
