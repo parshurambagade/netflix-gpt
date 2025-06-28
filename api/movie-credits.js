@@ -1,4 +1,4 @@
-import { API_OPTIONS, TMDB_MOVIE_CREDITS } from "../src/utils/constants";
+import { API_OPTIONS, TMDB_MOVIE_CREDITS } from "../src/utils/constants.js";
 
 export default async function handler(req, res) {
   const { movieId } = req.query;
