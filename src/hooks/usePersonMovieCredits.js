@@ -1,5 +1,4 @@
 import { useCallback, useEffect } from "react";
-import { CORS_ORIGIN_PROXY, TMDB_PERSON_MOVIE_CREDITS } from "../utils/constants";
 import { useDispatch } from "react-redux";
 import { addMovieCredits } from "../redux/personSlice";
 
@@ -9,15 +8,11 @@ const usePersonMovieCredits = (personId) => {
   const fetchMovieCredits = useCallback(async () => {
     try {
       const response = await fetch(
-        `${CORS_ORIGIN_PROXY}${encodeURIComponent(
-          `${TMDB_PERSON_MOVIE_CREDITS + personId}/movie_credits?language=en-US&api_key=${
-            import.meta.env.VITE_TMDB_API_KEY
-          }`
-        )}`
+        `/api/person-movie-credits?personId=${personId}`
       );
       const json = await response.json();
 
-      dispatch(addMovieCredits(JSON.parse(json.contents)));
+      dispatch(addMovieCredits(json));
     } catch (err) {
       console.error(err);
     }
