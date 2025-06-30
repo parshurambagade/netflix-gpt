@@ -1,5 +1,4 @@
 import { useCallback, useEffect } from "react";
-import { CORS_ORIGIN_PROXY, TMDB_GET_PERSON_DETAILS } from "../utils/constants";
 import { useDispatch } from "react-redux";
 import { addPersonDetails } from "../redux/personSlice";
 
@@ -8,24 +7,17 @@ const usePersonDetails = (personId) => {
 
   const fetchPersonDetails = useCallback(async () => {
     try {
-      const data = await fetch(
-        `${CORS_ORIGIN_PROXY}${encodeURIComponent(
-          `${TMDB_GET_PERSON_DETAILS + personId}?api_key=${import.meta.env.VITE_TMDB_API_KEY}`
-        )}`
-      );
+      const data = await fetch(`/api/person-details?personId=${personId}`);
       const json = await data.json();
-      dispatch(addPersonDetails(JSON.parse(json.contents)));
+      dispatch(addPersonDetails(json));
     } catch (e) {
       console.error(e);
     }
-  },[dispatch, personId]);
-
+  }, [dispatch, personId]);
 
   useEffect(() => {
     personId && fetchPersonDetails();
   }, [fetchPersonDetails, personId]);
-
-
 };
 
 export default usePersonDetails;
