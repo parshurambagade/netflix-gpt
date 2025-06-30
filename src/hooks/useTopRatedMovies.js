@@ -1,5 +1,4 @@
 import { useCallback, useEffect } from "react";
-import { TMDB_TOP_RATED_MOVIES } from "../utils/constants";
 import { useDispatch, useSelector } from "react-redux";
 import { addTopRatedMovies } from "../redux/moviesSlice";
 
@@ -9,9 +8,9 @@ const useTopRatedMovies = () => {
 
   const fetchMovies = useCallback(async () => {
     try {
-      const data = await fetch(TMDB_TOP_RATED_MOVIES);
+      const data = await fetch("/api/top-rated-movies");
       const json = await data.json();
-      dispatch(addTopRatedMovies(JSON.parse(json?.contents)?.results));
+      dispatch(addTopRatedMovies(json.results));
     } catch (e) {
       console.error(e);
     }
